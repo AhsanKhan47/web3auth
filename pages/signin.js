@@ -1,5 +1,6 @@
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask';
 import { signIn } from 'next-auth/react';
+import styles from '../styles/Home.module.css'
 import { useAccount, useConnect, useSignMessage, useDisconnect } from 'wagmi';
 import { useRouter } from 'next/router';
 import axios from 'axios';
@@ -40,9 +41,9 @@ function SignIn() {
     };
 
     return (
-        <div>
-            <h3>Web3 Authentication</h3>
-            <button onClick={() => handleAuth()}>Authenticate via Metamask</button>
+        <div className={styles.roboto}>
+            <h3 className={styles.heading} >Web3 Authentication</h3>
+            <button className={styles.btn} onClick={() => handleAuth()}>Authenticate via Metamask</button>
         </div>
     );
 }
